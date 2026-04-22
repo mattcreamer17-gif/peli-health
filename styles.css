@@ -1,0 +1,361 @@
+/* Peli Health. Bespoke landing page. */
+:root {
+  --plum: #3E3869;
+  --lilac: #7F6FEA;
+  --violet: #9532E2;
+  --light-lilac: #BCB5E8;
+  --bg: #FFFFFF;
+  --surface-tint: #F7F5FB;
+  --text: #374151;
+  --text-soft: #6B6785;
+  --heading: #3E3869;
+  --rule: #E9E5F3;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --pill: 9999px;
+  --shadow-soft: 0 1px 2px 0 rgba(62, 56, 105, 0.06);
+  --shadow-med: 0 8px 24px -8px rgba(62, 56, 105, 0.18);
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Sora', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--violet);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(149, 50, 226, 0.25);
+  transition: color .2s ease, border-color .2s ease;
+}
+a:hover, a:focus-visible { color: var(--plum); border-bottom-color: var(--plum); }
+a:focus-visible { outline: 2px solid var(--lilac); outline-offset: 3px; border-radius: 2px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 32px 0 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-mark {
+  width: 44px; height: 44px;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-soft);
+  background: var(--plum);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+.brand-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--heading);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.brand-sub {
+  font-size: 12px;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 56px 0 48px;
+  position: relative;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--violet);
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 6px 12px;
+  border: 1px solid var(--rule);
+  border-radius: var(--pill);
+  background: var(--surface-tint);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(34px, 6.4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--heading);
+  margin: 0 0 20px;
+  max-width: 22ch;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(95deg, var(--plum) 0%, var(--violet) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-lede {
+  font-size: 19px;
+  color: var(--text-soft);
+  max-width: 60ch;
+  margin: 0 0 28px;
+}
+.prepared-for {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--plum);
+  font-size: 17px;
+}
+.prepared-for::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--plum);
+  vertical-align: middle;
+  margin-right: 12px;
+  opacity: .5;
+}
+
+/* ---------- Pitch body ---------- */
+.pitch {
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--rule);
+}
+.pitch-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.section-label {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--plum);
+  font-size: 18px;
+  padding-top: 6px;
+}
+.section-label-num {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.pitch p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.72;
+}
+.pitch p:last-child { margin-bottom: 0; }
+.pitch .lead {
+  font-size: 18.5px;
+}
+.pitch h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--heading);
+  letter-spacing: -0.01em;
+  margin: 44px 0 14px;
+}
+
+blockquote.callout {
+  margin: 32px 0;
+  padding: 22px 28px;
+  border-left: 3px solid var(--violet);
+  background: var(--surface-tint);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--plum);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.frame-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  gap: 14px;
+}
+.frame-list li {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+.frame-pct {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--violet);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.frame-body strong {
+  color: var(--heading);
+  font-weight: 500;
+}
+.frame-body p { margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; }
+
+/* ---------- CTA ---------- */
+.cta {
+  margin-top: 56px;
+  padding: 40px 36px;
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(149,50,226,0.08), transparent 60%),
+    linear-gradient(140deg, var(--plum) 0%, #4E3E8C 55%, var(--violet) 110%);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  right: -80px; top: -80px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(188,181,232,0.28), transparent 70%);
+  pointer-events: none;
+}
+.cta h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(26px, 4.4vw, 34px);
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  line-height: 1.15;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.cta p {
+  color: rgba(255,255,255,0.88);
+  font-size: 16.5px;
+  max-width: 54ch;
+  margin: 0 0 26px;
+  position: relative;
+  z-index: 1;
+}
+.cta a.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: #fff;
+  color: var(--plum);
+  border-radius: var(--pill);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  border: none;
+  position: relative;
+  z-index: 1;
+  min-height: 48px;
+  box-shadow: 0 6px 18px -6px rgba(0,0,0,0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cta a.cta-link:hover,
+.cta a.cta-link:focus-visible {
+  transform: translateY(-1px);
+  color: var(--violet);
+  box-shadow: 0 10px 24px -6px rgba(0,0,0,0.4);
+}
+.cta a.cta-link:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.cta-arrow {
+  width: 18px; height: 18px;
+  transition: transform .2s ease;
+}
+.cta a.cta-link:hover .cta-arrow { transform: translateX(3px); }
+.cta-contact {
+  margin-top: 22px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  position: relative;
+  z-index: 1;
+}
+.cta-contact strong { color: #fff; font-weight: 500; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 80px;
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--text-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--text-soft); border-bottom-color: transparent; }
+.site-footer a:hover { color: var(--plum); border-bottom-color: var(--plum); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .pitch-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .section-label { padding-top: 0; font-size: 16px; }
+  .pitch h2 { margin-top: 32px; }
+  .cta { padding: 32px 24px; }
+  .hero { padding: 36px 0 32px; }
+  .site-header { padding-top: 24px; }
+  blockquote.callout { font-size: 19px; padding: 20px 22px; margin: 24px 0; }
+  .frame-list li { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px; }
+  .frame-pct { font-size: 24px; }
+}
+
+@media (max-width: 420px) {
+  .container { padding: 0 20px; }
+  .hero h1 { font-size: 34px; }
+  .hero-lede { font-size: 17px; }
+  .pitch p { font-size: 16.5px; }
+  .cta { padding: 28px 22px; border-radius: var(--radius-md); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
